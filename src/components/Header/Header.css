@@ -1,0 +1,68 @@
+.logo {
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+
+.page-header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.primary-heading {
+  font-size: 42px;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  align-self: flex-start;
+}
+
+.btn-share {
+  margin-top: 50px;
+  /* margin-right: -180px; */
+}
+
+.underline:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: -4px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background: rgb(255, 92, 182);
+
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.underline:hover:after {
+  width: 80%;
+  background: rgb(195, 107, 254);
+}
+
+.btn-login {
+  margin-top: 50px;
+}
+
+.header-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}

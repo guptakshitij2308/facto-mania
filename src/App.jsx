@@ -1,9 +1,12 @@
-import ParticlesBackground from "./ParticlesBackground";
+import "./styles.css";
+import Header from "./components/Header/Header";
+import FactCategories from "./components/FactCategories/FactCategories";
 
 function App() {
   return (
     <div className="App">
-      <ParticlesBackground />
+      <Header />
+      <FactCategories />
     </div>
   );
 }

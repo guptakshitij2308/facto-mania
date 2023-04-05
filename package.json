@@ -10,6 +10,9 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-tsparticles": "^2.9.3",

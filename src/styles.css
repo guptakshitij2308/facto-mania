@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #500724;
+  font-family: "Rubik";
+  color: #fff;
+  padding: 48px 64px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.form-facts {
+  background-color: #831843;
+  margin-bottom: 40px;
+  padding: 16px 32px;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+}
+
+.form-facts input,
+.form-facts select {
+  width: 220px;
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 24px;
+  font-size: 18px;
+  /* color: inherit; */
+  font-family: inherit;
+}
+
+.form-facts input:first-child {
+  flex-grow: 1;
+}
+
+.form-facts span {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 18px;
+}
+
+.fact-categories {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 48px;
+}
+
+.fact {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: "Secular One";
+  background-color: #831843;
+  margin-bottom: 16px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-radius: 16px;
+}
+
+.source-link:link,
+.source-link:visited {
+  text-decoration: none;
+  font-family: inherit;
+  color: #d5d5d5;
+  transition: all 0.3s;
+  margin-left: 14px;
+}
+
+.source-link:hover,
+.source-link:active {
+  color: #b7b7b7;
+  transition: all 0.3s;
+}
+
+.category {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Roboto";
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tech {
+  background-color: #fecdd3;
+  color: #000;
+}
+
+.react-buttons {
+  margin-left: auto;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+.react-buttons button {
+  background-color: #fff;
+  padding: 4px 10px;
+  border-radius: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.react-buttons button:hover {
+  background-color: #e7e7e7;
+  transition: all 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 16px 0 13px;
+  background-image: radial-gradient(
+    circle farthest-corner at 10.2% 55.8%,
+    rgba(252, 37, 103, 1) 0%,
+    rgba(250, 38, 151, 1) 46.2%,
+    rgba(186, 8, 181, 1) 90.1%
+  );
+  color: inherit;
+  border-radius: 100px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  transform: scale(0.95);
+  transition: all 0.3s;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.btn-large {
+  font-size: 26px;
+  padding: 20px 32px 17px;
+  border-radius: 45px;
+}
+
+.btn-all {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.btn-fact-type {
+  width: 100%;
+  margin-bottom: 16px;
+  background-image: none;
+}
+
+.btn-tech {
+  background-image: radial-gradient(
+    circle farthest-corner at 7.2% 13.6%,
+    rgba(37, 249, 245, 1) 0%,
+    rgba(8, 70, 218, 1) 90%
+  );
+}
+
+.hidden {
+  display: none;
+}
+
+/* .glow-on-hover {
+  width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */
