@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FactList.css";
 import Fact from "../Fact/Fact";
 
@@ -36,8 +36,8 @@ const initialFacts = [
   },
 ];
 
-const FactList = () => {
-  const facts = initialFacts;
+const FactList = ({ facts }) => {
+  // const [facts, setFacts] = useState(initialFacts);
   return (
     <section>
       <ul className="facts-all">

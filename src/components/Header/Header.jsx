@@ -4,8 +4,9 @@ import "./Header.css";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 
 import LockPersonIcon from "@mui/icons-material/LockPerson";
+import CancelIcon from "@mui/icons-material/Cancel";
 
-const Header = () => {
+const Header = ({ showForm, setShowForm }) => {
   return (
     <div>
       <ParticlesBackground />
@@ -17,9 +18,16 @@ const Header = () => {
           </h1>
         </div>
         <div className="header-btns">
-          <button className="btn btn-large btn-share">
-            Cite Something
-            <LibraryBooksIcon className="icon" />
+          <button
+            onClick={() => setShowForm((show) => !show)}
+            className="btn btn-large btn-share"
+          >
+            {showForm ? "Close" : "Share a fact"}
+            {showForm ? (
+              <CancelIcon className="icon" />
+            ) : (
+              <LibraryBooksIcon className="icon" />
+            )}
           </button>
           <button className="btn btn-large btn-login">
             Login <LockPersonIcon className="icon" />

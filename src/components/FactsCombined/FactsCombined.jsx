@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import FactCategories from "./FactCategories/FactCategories";
 import FactList from "./FactList/FactList";
 
-const FactsCombined = () => {
+const FactsCombined = ({ facts }) => {
   return (
     <main className="fact-categories">
       <FactCategories />
-      <FactList />
+      <FactList facts={facts} />
     </main>
   );
 };

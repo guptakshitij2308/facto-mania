@@ -1,4 +1,8 @@
 import React from "react";
+// import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import DangerousIcon from "@mui/icons-material/Dangerous";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
@@ -29,9 +33,20 @@ const Fact = ({ fact }) => {
         {fact.category}
       </span>
       <div className="react-buttons">
-        <button>✅{fact.votesInteresting}</button>
-        <button>💥{fact.votesMindblowing}</button>
-        <button>❌{fact.votesFalse}</button>
+        <button>
+          <ThumbUpAltIcon />
+          {fact.votesInteresting}
+        </button>
+        <button>
+          {" "}
+          <LocalFireDepartmentIcon />
+          {fact.votesMindblowing}
+        </button>
+        <button>
+          {" "}
+          <DangerousIcon />
+          {fact.votesFalse}
+        </button>
       </div>
     </li>
   );
