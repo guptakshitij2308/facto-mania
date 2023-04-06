@@ -1,6 +1,9 @@
 import React from "react";
 import ParticlesBackground from "../ParticlesBackground";
 import "./Header.css";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+
+import LockPersonIcon from "@mui/icons-material/LockPerson";
 
 const Header = () => {
   return (
@@ -14,8 +17,13 @@ const Header = () => {
           </h1>
         </div>
         <div className="header-btns">
-          <button className="btn btn-large btn-share">Tell us something</button>
-          <button className="btn btn-large btn-login">Login</button>
+          <button className="btn btn-large btn-share">
+            Cite Something
+            <LibraryBooksIcon className="icon" />
+          </button>
+          <button className="btn btn-large btn-login">
+            Login <LockPersonIcon className="icon" />
+          </button>
           <button className="btn btn-large btn-close hidden">Close</button>
         </div>
       </header>

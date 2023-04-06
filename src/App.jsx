@@ -1,12 +1,14 @@
 import "./styles.css";
 import Header from "./components/Header/Header";
-import FactCategories from "./components/FactCategories/FactCategories";
+import Form from "./components/Form/Form";
+import FactsCombined from "./components/FactsCombined/FactsCombined";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <FactCategories />
+      <Form />
+      <FactsCombined />
     </div>
   );
 }

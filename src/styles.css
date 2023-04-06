@@ -11,8 +11,8 @@ body {
   padding: 48px 64px;
 }
 
-.container {
-  max-width: 1400px;
+#root {
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -183,6 +183,12 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.icon {
+  margin-left: 5px;
+  margin-top: 2px;
+  font-size: 25px !important;
 }
 
 /* .glow-on-hover {
