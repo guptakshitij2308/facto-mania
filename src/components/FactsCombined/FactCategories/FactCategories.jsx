@@ -12,17 +12,23 @@ const CATEGORIES = [
   { name: "news", color: "#8b5cf6" },
 ];
 
-const FactCategories = () => {
+const FactCategories = ({ setCurrentCategory }) => {
   return (
     <aside>
       <ul>
         <li>
-          <button className="btn btn-all">All</button>
+          <button
+            onClick={() => setCurrentCategory("all")}
+            className="btn btn-all"
+          >
+            All
+          </button>
         </li>
 
         {CATEGORIES.map((cat) => (
           <li key={cat.name}>
             <button
+              onClick={() => setCurrentCategory(cat.name)}
               style={{ backgroundColor: cat.color }}
               className="btn btn-fact-type"
             >
