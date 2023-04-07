@@ -38,12 +38,10 @@ const Fact = ({ fact }) => {
           {fact.votesInteresting}
         </button>
         <button>
-          {" "}
           <LocalFireDepartmentIcon />
           {fact.votesMindblowing}
         </button>
         <button>
-          {" "}
           <DangerousIcon />
           {fact.votesFalse}
         </button>
