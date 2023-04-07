@@ -36,13 +36,13 @@ const initialFacts = [
   },
 ];
 
-const FactList = ({ facts }) => {
+const FactList = ({ facts, setFacts }) => {
   // const [facts, setFacts] = useState(initialFacts);
   return (
     <section>
       <ul className="facts-all">
         {facts.map((fact) => {
-          return <Fact key={fact.id} fact={fact} />;
+          return <Fact key={fact.id} fact={fact} setFacts={setFacts} />;
         })}
       </ul>
       <p>

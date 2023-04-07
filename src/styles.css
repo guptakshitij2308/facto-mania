@@ -119,6 +119,9 @@ body {
   background-color: #e7e7e7;
   transition: all 0.3s;
 }
+.react-buttons button:disabled {
+  background-color: #fff;
+}
 
 ul {
   list-style: none;

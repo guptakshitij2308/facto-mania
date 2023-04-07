@@ -51,8 +51,7 @@ const Form = ({ setFacts, setShowForm }) => {
         .insert([{ text, source, category }])
         .select();
 
-      console.log(newFact);
-      setFacts((facts) => [newFact[0], ...facts]);
+      if (!error) setFacts((facts) => [newFact[0], ...facts]);
 
       setText("");
       setSource("");

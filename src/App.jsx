@@ -43,6 +43,7 @@ function App() {
         isLoading={isLoading}
         facts={facts}
         setCurrentCategory={setCurrentCategory}
+        setFacts={setFacts}
       />
 
       {/* <FactsCombined isLoading={isLoading} facts={facts} /> */}

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 // import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import supabase from "../../../supabase";
 
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
@@ -14,7 +15,23 @@ const CATEGORIES = [
   { name: "history", color: "#f97316" },
   { name: "news", color: "#8b5cf6" },
 ];
-const Fact = ({ fact }) => {
+const Fact = ({ fact, setFacts }) => {
+  const [isUpdating, setIsUpdating] = useState(false);
+  async function handleVote(columnName) {
+    setIsUpdating(true);
+    const { data: updatedFact, error } = await supabase
+      .from("fact")
+      .update({ [columnName]: fact[columnName] + 1 })
+      .eq("id", fact.id)
+      .select();
+
+    setIsUpdating(false);
+    if (!error)
+      setFacts((facts) =>
+        facts.map((f) => (f.id === fact.id ? updatedFact[0] : f))
+      );
+  }
+
   return (
     <li className="fact">
       <p>
@@ -33,15 +50,21 @@ const Fact = ({ fact }) => {
         {fact.category}
       </span>
       <div className="react-buttons">
-        <button>
+        <button
+          onClick={() => handleVote("votesInteresting")}
+          disabled={isUpdating}
+        >
           <ThumbUpAltIcon />
           {fact.votesInteresting}
         </button>
-        <button>
+        <button
+          onClick={() => handleVote("votesMindblowing")}
+          disabled={isUpdating}
+        >
           <LocalFireDepartmentIcon />
           {fact.votesMindblowing}
         </button>
-        <button>
+        <button onClick={() => handleVote("votesFalse")} disabled={isUpdating}>
           <DangerousIcon />
           {fact.votesFalse}
         </button>
