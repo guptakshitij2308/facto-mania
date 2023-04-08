@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-// import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import supabase from "../../../supabase";
+import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
@@ -17,6 +17,12 @@ const CATEGORIES = [
 ];
 const Fact = ({ fact, setFacts }) => {
   const [isUpdating, setIsUpdating] = useState(false);
+
+  const isDisputed =
+    fact.votesInteresting + fact.votesMindblowing < fact.votesFalse
+      ? true
+      : false;
+
   async function handleVote(columnName) {
     setIsUpdating(true);
     const { data: updatedFact, error } = await supabase
@@ -35,6 +41,11 @@ const Fact = ({ fact, setFacts }) => {
   return (
     <li className="fact">
       <p>
+        {isDisputed ? (
+          <span className="disputed">
+            [<DoNotDisturbIcon className="disputed-icon" /> Disputed]
+          </span>
+        ) : null}
         {fact.text}
         <a className="source-link" href={fact.source} target="_blank">
           ( Source )

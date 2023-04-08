@@ -16,6 +16,11 @@ body {
   margin: 0 auto;
 }
 
+section {
+  overflow: scroll;
+  padding-bottom: 40px;
+}
+
 .form-facts {
   background-color: #2a2a2a;
   margin-bottom: 40px;
@@ -51,8 +56,20 @@ body {
 
 .fact-categories {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 0.85fr 3fr;
   gap: 48px;
+  height: 80vh;
+}
+
+.disputed {
+  color: red;
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.disputed-icon {
+  margin-right: 2px;
+  margin-bottom: -5px;
 }
 
 .fact {
@@ -202,6 +219,15 @@ ul {
 .loader {
   text-align: center;
   margin-top: 200px;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 /* .glow-on-hover {
