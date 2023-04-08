@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
 import FactsCombined from "./components/FactsCombined/FactsCombined";
 import supabase from "./supabase";
+import PageFooter from "./components/Footer/PageFooter";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -46,6 +47,7 @@ function App() {
         setFacts={setFacts}
       />
 
+      <PageFooter />
       {/* <FactsCombined isLoading={isLoading} facts={facts} /> */}
 
       {/* <FactsCombined facts={facts} /> */}

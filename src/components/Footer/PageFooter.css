@@ -1,0 +1,58 @@
+.page-footer {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "Rubik";
+  background-color: #d3d000;
+  opacity: 0.8;
+  background-image: radial-gradient(
+    circle farthest-corner at 10.2% 55.8%,
+    rgba(252, 37, 103, 1) 0%,
+    rgba(250, 38, 151, 1) 46.2%,
+    rgba(186, 8, 181, 1) 90.1%
+  );
+  padding: 48px 0;
+  border-radius: 20px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 35px;
+  margin-bottom: 20px;
+  letter-spacing: 1.2;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.copyright-message {
+  font-size: 20px;
+}
+
+.footer-logo {
+  height: 40px;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.footer-icon {
+  scale: 1.1;
+}
+
+.footer-icon:hover {
+  color: #e4e4e4;
+  cursor: pointer;
+  transition: all 0.3s;
+  scale: 1.25;
+}
