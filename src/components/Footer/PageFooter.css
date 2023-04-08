@@ -2,17 +2,9 @@
   text-align: center;
   margin-top: 100px;
   font-family: "Rubik";
-  background-color: #d3d000;
-  opacity: 0.8;
-  background-image: radial-gradient(
-    circle farthest-corner at 10.2% 55.8%,
-    rgba(252, 37, 103, 1) 0%,
-    rgba(250, 38, 151, 1) 46.2%,
-    rgba(186, 8, 181, 1) 90.1%
-  );
   padding: 48px 0;
   border-radius: 20px;
-  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
 .copyright {
@@ -40,7 +32,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   margin-top: 20px;
   color: #ffffff;
   transition: all 0.3s;
