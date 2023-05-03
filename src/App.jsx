@@ -1,56 +1,24 @@
-import { useState, useEffect } from "react";
 import "./styles.css";
-import Header from "./components/Header/Header";
-import Form from "./components/Form/Form";
-import FactsCombined from "./components/FactsCombined/FactsCombined";
-import supabase from "./supabase";
+
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
+import Login from "./components/Pages/Login";
+import Signup from "./components/Pages/Signup";
 import PageFooter from "./components/Footer/PageFooter";
 
+import Home from "./components/Pages/Home";
+
 function App() {
-  const [showForm, setShowForm] = useState(false);
-  const [facts, setFacts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState("all");
-
-  useEffect(
-    function () {
-      async function getFacts() {
-        setIsLoading(true);
-
-        let query = supabase.from("fact").select("*");
-
-        if (currentCategory !== "all")
-          query = query.eq("category", currentCategory);
-
-        const { data: fact, error } = await query
-          .order("votesInteresting", { ascending: false })
-          .limit(1000);
-
-        if (!error) setFacts(fact);
-        else alert("There was some problem in fetching the facts");
-        setIsLoading(false);
-      }
-      getFacts();
-    },
-    [currentCategory]
-  );
-
   return (
     <div className="App">
-      <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? <Form setFacts={setFacts} setShowForm={setShowForm} /> : null}
-
-      <FactsCombined
-        isLoading={isLoading}
-        facts={facts}
-        setCurrentCategory={setCurrentCategory}
-        setFacts={setFacts}
-      />
-
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
       <PageFooter />
-      {/* <FactsCombined isLoading={isLoading} facts={facts} /> */}
-
-      {/* <FactsCombined facts={facts} /> */}
     </div>
   );
 }
