@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
@@ -6,12 +6,14 @@ import KeyIcon from "@mui/icons-material/Key";
 import ParticlesBackground from "./../ParticlesBackground";
 
 const Login = () => {
-  const login = async () => {
-    let { data, error } = await supabase.auth.signInWithPassword({
-      email: "someone@email.com",
-      password: "wYhwMOucClzBbQbvWNYZ",
-    });
-  };
+  const [emailData, setEmailData] = useState("");
+  const [passwordData, setPasswordData] = useState("");
+
+  function handleChange(e) {
+    setFormData(e.target.value);
+  }
+
+  // console.log(emailData, passwordData);
   return (
     <>
       <ParticlesBackground />
@@ -21,11 +23,21 @@ const Login = () => {
           <form action="#">
             <div className="input-field">
               <PersonIcon />
-              <input type="text" placeholder="Email" />
+              <input
+                type="text"
+                placeholder="Email"
+                onChange={(e) => setEmailData(e.target.value)}
+                name="email"
+              />
             </div>
             <div className="input-field">
               <KeyIcon />
-              <input type="Password" placeholder="Password" />
+              <input
+                type="Password"
+                placeholder="Password"
+                onChange={(e) => setPasswordData(e.target.value)}
+                name="password"
+              />
             </div>
             <div className="link">
               <Link to="/signup" style={{ textDecoration: "none" }}>
@@ -33,7 +45,9 @@ const Login = () => {
               </Link>
             </div>
             <div className="btn-field">
-              <button className="button">Login</button>
+              <button className="button" type="submit">
+                Login
+              </button>
             </div>
           </form>
         </div>

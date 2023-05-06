@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
@@ -6,12 +6,12 @@ import KeyIcon from "@mui/icons-material/Key";
 import ParticlesBackground from "./../ParticlesBackground";
 
 const Signup = () => {
-  const signup = async () => {
-    let { data, error } = await supabase.auth.signUp({
-      email: "someone@email.com",
-      password: "wYhwMOucClzBbQbvWNYZ",
-    });
-  };
+  const [emailData, setEmailData] = useState("");
+  const [passwordData, setPasswordData] = useState("");
+
+  function handleChange(e) {
+    setFormData(e.target.value);
+  }
   return (
     <>
       <ParticlesBackground />
@@ -21,11 +21,21 @@ const Signup = () => {
           <form action="#">
             <div className="input-field">
               <PersonIcon />
-              <input type="text" placeholder="Email" />
+              <input
+                type="text"
+                placeholder="Email"
+                onChange={(e) => setEmailData(e.target.value)}
+                name="email"
+              />
             </div>
             <div className="input-field">
               <KeyIcon />
-              <input type="Password" placeholder="Password" />
+              <input
+                type="Password"
+                placeholder="Password"
+                onChange={(e) => setPasswordData(e.target.value)}
+                name="password"
+              />
             </div>
             <div className="link">
               <Link to="/login" style={{ textDecoration: "none" }}>
