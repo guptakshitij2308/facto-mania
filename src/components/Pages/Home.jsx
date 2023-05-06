@@ -3,7 +3,6 @@ import Header from "../Header/Header";
 import Form from "../Form/Form";
 import FactsCombined from "../FactsCombined/FactsCombined";
 import supabase from "../../supabase.js";
-import PageFooter from "../Footer/PageFooter";
 import { useState, useEffect } from "react";
 
 const Home = () => {

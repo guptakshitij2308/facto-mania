@@ -6,6 +6,8 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import LockPersonIcon from "@mui/icons-material/LockPerson";
 import CancelIcon from "@mui/icons-material/Cancel";
 
+import { Link } from "react-router-dom";
+
 const Header = ({ showForm, setShowForm }) => {
   return (
     <div>
@@ -29,9 +31,15 @@ const Header = ({ showForm, setShowForm }) => {
               <LibraryBooksIcon className="icon" />
             )}
           </button>
+
           <button className="btn btn-large btn-login">
-            Login <LockPersonIcon className="icon" />
+            <div className="btn-login-link">
+              <Link to="/login">
+                Login <LockPersonIcon className="icon" />
+              </Link>
+            </div>
           </button>
+
           <button className="btn btn-large btn-close hidden">Close</button>
         </div>
       </header>

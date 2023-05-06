@@ -15,7 +15,7 @@ const PageFooter = () => {
       {/* <p className="footer-message">Contact Me</p> */}
       <div className="copyright">
         <img className="footer-logo" src="./website-logo.png" />
-        <p className="copyright-message">Copyright (©️) 2023 Facto-Mania</p>
+        <p className="copyright-message">Copyright (©️) 2023 Kshitij Gupta</p>
       </div>
       <div className="footer-icons">
         <GitHubIcon className="footer-icon" />
