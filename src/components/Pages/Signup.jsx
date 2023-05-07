@@ -19,14 +19,13 @@ const Signup = () => {
       });
       if (error) throw error;
 
-      console.log(data);
       alert("Check your email for verification link");
     } catch (error) {
       alert(error);
     }
   }
 
-  // console.log(emailData, passwordData);
+  console.log(emailData, passwordData);
 
   return (
     <>
@@ -59,9 +58,7 @@ const Signup = () => {
               </Link>
             </div>
             <div className="btn-field">
-              <button type="submit" className="button">
-                Sign Up
-              </button>
+              <button className="button">Sign Up</button>
             </div>
           </form>
         </div>
