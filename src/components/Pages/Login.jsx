@@ -1,26 +1,43 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import KeyIcon from "@mui/icons-material/Key";
 import ParticlesBackground from "./../ParticlesBackground";
+import supabase from "./../../supabase.js";
 
-const Login = () => {
+const Login = ({ setToken }) => {
+  let navigate = useNavigate();
+
   const [emailData, setEmailData] = useState("");
   const [passwordData, setPasswordData] = useState("");
 
-  function handleChange(e) {
-    setFormData(e.target.value);
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: emailData,
+        password: passwordData,
+      });
+      if (error) throw error;
+
+      // console.log(data);
+      setToken(data);
+      navigate("/");
+    } catch (error) {
+      alert(error);
+    }
   }
 
   // console.log(emailData, passwordData);
+
   return (
     <>
       <ParticlesBackground />
       <div className="login-parent">
         <div className="login-box">
           <h1>Login</h1>
-          <form action="#">
+          <form onSubmit={handleSubmit}>
             <div className="input-field">
               <PersonIcon />
               <input

@@ -15,7 +15,7 @@ const CATEGORIES = [
   { name: "history", color: "#f97316" },
   { name: "news", color: "#8b5cf6" },
 ];
-const Fact = ({ fact, setFacts }) => {
+const Fact = ({ fact, setFacts, token }) => {
   const [isUpdating, setIsUpdating] = useState(false);
 
   const isDisputed =
@@ -24,18 +24,20 @@ const Fact = ({ fact, setFacts }) => {
       : false;
 
   async function handleVote(columnName) {
-    setIsUpdating(true);
-    const { data: updatedFact, error } = await supabase
-      .from("fact")
-      .update({ [columnName]: fact[columnName] + 1 })
-      .eq("id", fact.id)
-      .select();
+    if (token) {
+      setIsUpdating(true);
+      const { data: updatedFact, error } = await supabase
+        .from("fact")
+        .update({ [columnName]: fact[columnName] + 1 })
+        .eq("id", fact.id)
+        .select();
 
-    setIsUpdating(false);
-    if (!error)
-      setFacts((facts) =>
-        facts.map((f) => (f.id === fact.id ? updatedFact[0] : f))
-      );
+      setIsUpdating(false);
+      if (!error)
+        setFacts((facts) =>
+          facts.map((f) => (f.id === fact.id ? updatedFact[0] : f))
+        );
+    } else alert("You need to log in to vote on facts");
   }
 
   return (

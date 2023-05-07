@@ -6,9 +6,24 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import LockPersonIcon from "@mui/icons-material/LockPerson";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Header = ({ showForm, setShowForm }) => {
+const Header = ({ showForm, setShowForm, token }) => {
+  let navigate = useNavigate();
+
+  function handleClick() {
+    if (token) setShowForm((show) => !show);
+    else alert("Please log in to share a new fact");
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem("token");
+
+    navigate("/");
+    // location.reload();
+    navigate(0);
+  }
+
   return (
     <div>
       <ParticlesBackground />
@@ -20,25 +35,32 @@ const Header = ({ showForm, setShowForm }) => {
           </h1>
         </div>
         <div className="header-btns">
-          <button
-            onClick={() => setShowForm((show) => !show)}
-            className="btn btn-large btn-share"
-          >
-            {showForm ? "Close" : "Share a fact"}
-            {showForm ? (
+          <button onClick={handleClick} className="btn btn-large btn-share">
+            {showForm && token ? "Close" : "Share a fact"}
+            {showForm && token ? (
               <CancelIcon className="icon" />
             ) : (
               <LibraryBooksIcon className="icon" />
             )}
           </button>
 
-          <button className="btn btn-large btn-login">
-            <div className="btn-login-link">
-              <Link to="/login">
-                Login <LockPersonIcon className="icon" />
-              </Link>
-            </div>
-          </button>
+          {token ? (
+            <button className="btn btn-large btn-login" onClick={handleLogout}>
+              <div className="btn-login-link">
+                <Link to="/">
+                  Logout <LockPersonIcon className="icon" />
+                </Link>
+              </div>
+            </button>
+          ) : (
+            <button className="btn btn-large btn-login">
+              <div className="btn-login-link">
+                <Link to="/login">
+                  Login <LockPersonIcon className="icon" />
+                </Link>
+              </div>
+            </button>
+          )}
 
           <button className="btn btn-large btn-close hidden">Close</button>
         </div>

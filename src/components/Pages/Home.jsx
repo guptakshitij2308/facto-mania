@@ -5,7 +5,7 @@ import FactsCombined from "../FactsCombined/FactsCombined";
 import supabase from "../../supabase.js";
 import { useState, useEffect } from "react";
 
-const Home = () => {
+const Home = ({ token }) => {
   const [showForm, setShowForm] = useState(false);
   const [facts, setFacts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,14 +36,18 @@ const Home = () => {
 
   return (
     <>
-      <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? <Form setFacts={setFacts} setShowForm={setShowForm} /> : null}
+      <Header showForm={showForm} setShowForm={setShowForm} token={token} />
+
+      {showForm && token ? (
+        <Form setFacts={setFacts} setShowForm={setShowForm} />
+      ) : null}
 
       <FactsCombined
         isLoading={isLoading}
         facts={facts}
         setCurrentCategory={setCurrentCategory}
         setFacts={setFacts}
+        token={token}
       />
     </>
   );
