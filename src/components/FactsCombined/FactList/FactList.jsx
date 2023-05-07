@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FactList.css";
+
 import Fact from "../Fact/Fact";
 
 const FactList = ({ facts, setFacts, token }) => {
@@ -13,7 +13,7 @@ const FactList = ({ facts, setFacts, token }) => {
           );
         })}
       </ul>
-      <p>
+      <p className="facts-length">
         This category has {facts.length} entries in the database! Include your
         own.
       </p>

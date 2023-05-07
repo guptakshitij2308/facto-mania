@@ -229,3 +229,8 @@ html {
   width: 0;
   background: transparent;
 }
+
+.facts-length {
+  text-align: center;
+  margin-top: 50px;
+}
