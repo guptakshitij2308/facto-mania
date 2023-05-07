@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import FactCategories from "./FactCategories/FactCategories";
-import FactList from "./FactList/FactList";
+import FactCategories from "./FactCategories";
+import FactList from "./FactList";
 import Loading from "../Loading";
 
 const FactsCombined = ({

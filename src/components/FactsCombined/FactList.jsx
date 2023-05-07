@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Fact from "../Fact/Fact";
+import Fact from "./Fact";
 
 const FactList = ({ facts, setFacts, token }) => {
   // const [facts, setFacts] = useState(initialFacts);

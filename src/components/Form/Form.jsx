@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.css";
 import supabase from "../../supabase";
 
 const CATEGORIES = [

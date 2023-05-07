@@ -1,5 +1,4 @@
 import React from "react";
-import "./Fact-Categories.css";
 
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },

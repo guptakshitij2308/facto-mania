@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
-import supabase from "../../../supabase";
+import supabase from "../../supabase";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 
 const CATEGORIES = [
