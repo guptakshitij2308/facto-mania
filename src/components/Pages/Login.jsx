@@ -5,12 +5,29 @@ import PersonIcon from "@mui/icons-material/Person";
 import KeyIcon from "@mui/icons-material/Key";
 import ParticlesBackground from "./../ParticlesBackground";
 import supabase from "./../../supabase.js";
+import GoogleIcon from "@mui/icons-material/Google";
 
 const Login = ({ setToken }) => {
   let navigate = useNavigate();
 
   const [emailData, setEmailData] = useState("");
   const [passwordData, setPasswordData] = useState("");
+
+  async function loginWithGoogle() {
+    // e.preventDefault();
+    try {
+      let { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+      });
+      if (error) throw error;
+
+      console.log(data);
+      setToken(data);
+      // navigate("/");
+    } catch (error) {
+      alert(error);
+    }
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -67,6 +84,15 @@ const Login = ({ setToken }) => {
               </button>
             </div>
           </form>
+          <div className="btn-field ">
+            <button
+              className="button google-signin"
+              type="submit"
+              onClick={loginWithGoogle}
+            >
+              <GoogleIcon className="g-icon" /> <div>Signin</div>
+            </button>
+          </div>
         </div>
       </div>
     </>
