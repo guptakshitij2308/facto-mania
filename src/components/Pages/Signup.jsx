@@ -34,12 +34,14 @@ const Signup = () => {
       });
       if (error) throw error;
 
-      console.log(data);
-      setToken(data);
       // navigate("/");
     } catch (error) {
       alert(error);
     }
+
+    console.log(data);
+
+    if (data) setToken(data);
   }
 
   // console.log(emailData, passwordData);
