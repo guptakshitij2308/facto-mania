@@ -71,3 +71,48 @@
   text-decoration: none;
   color: inherit;
 }
+
+@media (max-width: 1350px) {
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .primary-heading {
+    font-size: 36px;
+  }
+
+  .btn-large {
+    font-size: 21px;
+    padding: 16px 24px 17px;
+    /* padding: 14px 0 12px; */
+  }
+
+  .icon {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1160px) {
+  .primary-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .page-header {
+    flex-direction: column;
+    /* align-items:; */
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-login,
+  .btn-share {
+    font-size: 18px;
+  }
+
+  .primary-heading {
+    font-size: 26px;
+  }
+}

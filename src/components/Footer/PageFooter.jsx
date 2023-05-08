@@ -18,10 +18,25 @@ const PageFooter = () => {
         <p className="copyright-message">Copyright (©️) 2023 Kshitij Gupta</p>
       </div>
       <div className="footer-icons">
-        <GitHubIcon className="footer-icon" />
-        <LinkedInIcon className="footer-icon" />
-        <FacebookIcon className="footer-icon" />
-        <InstagramIcon className="footer-icon" />
+        <a
+          className="footer-icons-a"
+          href="https://github.com/guptakshitij2308/facto-mania"
+          target="_blank"
+        >
+          <GitHubIcon className="footer-icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/kshitij-gupta-362aa1227/"
+          target="_blank"
+        >
+          <LinkedInIcon className="footer-icon" />
+        </a>
+        <a href="https://www.facebook.com/U.Get.Kshitij/" target="_blank">
+          <FacebookIcon className="footer-icon" />
+        </a>
+        <a href="https://www.instagram.com/guptakshitijkumar_/" target="_blank">
+          <InstagramIcon className="footer-icon" />
+        </a>
       </div>
     </div>
   );

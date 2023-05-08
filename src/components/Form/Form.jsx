@@ -70,7 +70,7 @@ const Form = ({ setFacts, setShowForm }) => {
         onChange={(event) => setText(event.target.value)}
         disabled={isUploading}
       />
-      <span>{200 - textLength}</span>
+      <span className="char-left">{200 - textLength}</span>
       <input
         type="text"
         placeholder="Information's Source"

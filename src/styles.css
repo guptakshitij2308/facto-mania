@@ -12,7 +12,7 @@ body {
 }
 
 #root {
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -185,25 +185,17 @@ ul {
 
 .btn-all {
   margin-bottom: 28px;
-  width: 80%;
+  width: 83%;
   /* padding-bottom: 20px; */
   font-size: 22px;
 }
 
 .btn-fact-type {
-  width: 80%;
+  width: 85%;
   margin-bottom: 18px;
   background-image: none;
   /* padding-bottom: 15px; */
   font-size: 18px;
-}
-
-.btn-tech {
-  background-image: radial-gradient(
-    circle farthest-corner at 7.2% 13.6%,
-    rgba(37, 249, 245, 1) 0%,
-    rgba(8, 70, 218, 1) 90%
-  );
 }
 
 .hidden {
@@ -233,4 +225,69 @@ html {
 .facts-length {
   text-align: center;
   margin-top: 50px;
+}
+
+@media (max-width: 1400px) {
+  .fact {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+  .btn-all {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1110px) {
+  body {
+    padding: 30px 46px;
+  }
+  .btn-all {
+    width: 85%;
+  }
+
+  .btn-fact-type {
+    width: 88%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .form-facts {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-facts input,
+  .form-facts select {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .char-left {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 950px) {
+  .fact-categories {
+    grid-template-columns: 1fr;
+    margin: 0;
+    height: 150vh;
+  }
+
+  .btn-fact-type {
+    width: 100%;
+  }
+
+  .btn-all {
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .btn-large {
+    font-size: 14px;
+    padding: 16px 16px 15px;
+    border-radius: 30px;
+  }
 }

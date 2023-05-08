@@ -33,7 +33,7 @@ const Signup = () => {
         provider: "google",
       });
       if (error) throw error;
-
+      // if (data) setToken(data);
       // navigate("/");
     } catch (error) {
       alert(error);

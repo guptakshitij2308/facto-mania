@@ -50,7 +50,7 @@ const Fact = ({ fact, setFacts, token }) => {
         ) : null}
         {fact.text}
         <a className="source-link" href={fact.source} target="_blank">
-          ( Source )
+          <span>(Source)</span>
         </a>
       </p>
       <span
