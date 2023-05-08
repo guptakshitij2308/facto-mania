@@ -21,8 +21,9 @@ const Login = ({ setToken }) => {
       });
       if (error) throw error;
 
-      // if (data) setToken(data);
+      if (data) setToken(data);
       // navigate("/");
+      console.log(data);
     } catch (error) {
       alert(error);
     }
