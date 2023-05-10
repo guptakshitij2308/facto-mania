@@ -103,7 +103,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 120px;
   will-change: transform;
 }
 
@@ -127,4 +126,90 @@
   align-items: center;
   justify-content: space-around;
   gap: 10px;
+}
+
+@media (max-width: 800px) {
+  .login-box h1 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .login-box h1::after {
+    content: "";
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  .input-field {
+    padding: 0 10px;
+  }
+
+  .input-field input {
+    padding: 18px 18px;
+  }
+
+  .login-box {
+    max-width: 600px;
+
+    top: 50%;
+    left: 50%;
+    padding: 40px 60px 40px;
+
+    border-radius: 25px;
+  }
+
+  .button {
+    font-size: 16px;
+
+    min-height: 40px;
+
+    /* padding: 18px 18px; */
+  }
+
+  .google-signin {
+    /* justify-content: space-around; */
+    gap: 5px;
+  }
+
+  .g-icon {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 680px) {
+  .login-box {
+    max-width: 550px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 120px 50px;
+
+    border-radius: 50px;
+  }
+
+  .input-field input {
+    padding: 18px 15px;
+  }
+
+  .form-login {
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-box {
+    padding: 40px 85px 40px;
+
+    border-radius: 30px;
+  }
+
+  .form-login {
+    align-items: center;
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 }

@@ -52,7 +52,7 @@ const Signup = () => {
       <div className="login-parent">
         <div className="login-box">
           <h1>Sign Up</h1>
-          <form onSubmit={handleSubmit}>
+          <form className="form-login" onSubmit={handleSubmit}>
             <div className="input-field">
               <PersonIcon />
               <input

@@ -54,7 +54,7 @@ const Login = ({ setToken }) => {
       <div className="login-parent">
         <div className="login-box">
           <h1>Login</h1>
-          <form onSubmit={handleSubmit}>
+          <form className="form-login" onSubmit={handleSubmit}>
             <div className="input-field">
               <PersonIcon />
               <input
@@ -90,7 +90,8 @@ const Login = ({ setToken }) => {
               type="submit"
               onClick={loginWithGoogle}
             >
-              <GoogleIcon className="g-icon" /> <div>Signin</div>
+              <GoogleIcon className="g-icon" />
+              <div>Signin</div>
             </button>
           </div>
         </div>
